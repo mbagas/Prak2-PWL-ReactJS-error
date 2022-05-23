@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createUseStyles } from "react-jss";
-import { Button, PageLayout, Card } from "../../components";
+import { Button, PageLayout, Card, Profile } from "../../components";
 import _ from "lodash";
 
 export const PortofolioIndex = () => {
@@ -20,37 +20,50 @@ export const PortofolioIndex = () => {
     fetchProjects();
   }, []);
 
-  // console.log(project.projects.projects);
-  _.map(project.projects.projects, (project) => {
-    console.log(project.name);
-  });
   // project?.projects?.projects?.map((project) => console.log(project?.name));
 
   return (
     <PageLayout>
-      <div className={styles.landing}>
-        asdasdasd
-        <Button />
-      </div>
-      <div className={styles.project}>
-        {_.map(project.projects.projects, (project) => {
-          return <Card name={project.name} />;
-        })}
+      <div className={styles.container}>
+        <h2 className={styles.header}>Projects</h2>
+        <button onClick={() => console.log("asdasd")}>asdasd</button>
+        <div className={styles.project}>
+          {_.map(project.projects.projects, (project) => {
+            return <Card name={project.name} />;
+          })}
+        </div>
       </div>
     </PageLayout>
   );
 };
 
 const style = createUseStyles({
-  landing: {
-    padding: "20px",
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignContent: "center",
+    justifyContent: "center",
     flex: 1,
+    position: "relative",
+    top: 0,
+    left: 0,
+    zIndex: -1,
+    width: "100%",
   },
   project: {
     display: "flex",
-    flexWrap: "wrap",
     flexDirection: "row",
+    alignContent: "center",
     justifyContent: "center",
+    flex: 1,
+    position: "relative",
+    top: 0,
+    left: 0,
+    width: "100%",
+    flexWrap: "wrap",
+  },
+  header: {
+    textAlign: "center",
   },
 });
 

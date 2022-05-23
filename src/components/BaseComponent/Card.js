@@ -4,15 +4,20 @@ import { COLOR_THEME } from "../../utils/theme";
 
 export const Card = (props) => {
   const styles = style();
+
+  const comment = (id) => {
+    console.log(id);
+  };
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={() => console.log("asdasd")}>
       {/* <img src="img_avatar.png" alt="Avatar" style="width:100%"> */}
-      <image />
-      <div className={styles.container}>
-        <h4>
+      asd
+      <div className={styles.container} onClick={() => console.log("asdasd")}>
+        <h4 onClick={() => console.log("asdasd")}>
           <b>{props.name}</b>
         </h4>
         <p>Architect & Engineer</p>
+        <button onClick={() => console.log("asdasd")}>asdasd</button>
       </div>
     </div>
   );
